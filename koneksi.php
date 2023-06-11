@@ -3,10 +3,10 @@ header("Access-Control-Allow-Origin: *");
 header('Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE');
 header('Content-Type: application/json; charset=utf8');
 // Konfigurasi koneksi database
-$host = 'localhost';  // Ganti dengan host MySQL Anda
-$user = 'root';  // Ganti dengan username MySQL Anda
-$password = '';  // Ganti dengan password MySQL Anda
-$database = 'db_data_seniman';  // Ganti dengan nama database Anda
+$host = 'localhost';  
+$user = 'root';  
+$password = '';  
+$database = 'db_data_seniman';  
 // Membuat koneksi ke database
 $koneksi = mysqli_connect($host, $user, $password, $database);
 
@@ -80,17 +80,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'PUT') {
     }
 }
 if ($_SERVER['REQUEST_METHOD'] === 'DELETE') {
-    // Mendapatkan data yang dikirim melalui body request
+   
     parse_str(file_get_contents("php://input"), $deleteData);
     $id_seni = $deleteData['id_seni'];
 
-    // Query untuk menghapus data dari database
-    $query = "DELETE FROM tb_data_seniman WHERE id_seni='$id_seni'";  // Ganti dengan nama tabel dan kondisi yang sesuai
+    
+    $query = "DELETE FROM tb_data_seniman WHERE id_seni='$id_seni'";  
 
     // Menjalankan query
     $result = mysqli_query($koneksi, $query);
 
-    // Memeriksa apakah data berhasil dihapus atau tidak
+    
     if ($result) {
         echo json_encode(array('message' => 'Data berhasil dihapus'));
     } else {
