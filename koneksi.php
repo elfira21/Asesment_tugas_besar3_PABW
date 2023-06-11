@@ -67,7 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'PUT') {
     $alamat = $putData['alamat'];
 
     // Query untuk mengupdate data di database
-    $query = "UPDATE tb_data_seniman SET nama_seniman ='$nama_seniman', bidang_seni='$bidang_seni', umur ='$umur', alamat ='$alamat' WHERE id_seni='$id_seni'";  // Ganti dengan nama tabel, kolom, dan kondisi yang sesuai
+    $query = "UPDATE tb_data_seniman SET nama_seniman ='$nama_seniman', bidang_seni='$bidang_seni', umur ='$umur', alamat ='$alamat' WHERE id_seni='$id_seni'";
 
     // Menjalankan query
     $result = mysqli_query($koneksi, $query);
