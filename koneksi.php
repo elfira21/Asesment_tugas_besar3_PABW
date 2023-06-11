@@ -56,9 +56,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo json_encode(array('message' => 'Gagal menambahkan data'));
     }
 }
-// Mengupdate data melalui API
+// Mengupdate data di api
 if ($_SERVER['REQUEST_METHOD'] === 'PUT') {
-    // Mendapatkan data yang dikirim melalui body request
+    // Mendapatkan data yang dikirim
     parse_str(file_get_contents("php://input"), $putData);
     $id_seni = $putData['id_seni'];
     $nama_seniman = $putData['nama_seniman'];
