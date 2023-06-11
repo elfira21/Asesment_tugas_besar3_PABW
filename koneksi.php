@@ -18,7 +18,7 @@ if (!$koneksi) {
 // Mendapatkan data dari API
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     // Query untuk mendapatkan data dari database
-    $query = "SELECT * FROM tb_data_seniman";  // Ganti dengan nama tabel Anda
+    $query = "SELECT * FROM tb_data_seniman";  
 
     // Menjalankan query
     $result = mysqli_query($koneksi, $query);
